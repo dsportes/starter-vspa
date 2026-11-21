@@ -5,7 +5,7 @@ Tests élémentaires en environnement browser.
 Utilise pnpm
 
 Page à tester:
-- créer une pagexxx.vue dans `src/pages`
+- créer une `pagexxx.vue` dans `src/pages`
 - reporter son nom dans son import dans `main.ts` (3ième ligne)
 
 ### Dev
@@ -36,4 +36,4 @@ Lancement serveur en https: `./srv.ps1` ou `./srv.sh`
 
 URL: https://test.sportes.fr:8098/dist
 
-(ne plas oublier le dist).
+(ne plas oublier le **dist**).
