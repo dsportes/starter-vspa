@@ -1,15 +1,19 @@
 <template>
   <h1>Page test crypto</h1>
-  <button @click="test">Test</button>
+  <button @click="testCrypt">Test  SH ECDH</button>
+  <button @click="callOp">Call srv test</button>
+
   <div>{{  status }}</div>
 </template>
 
 <script setup lang="ts" vapor>
 import { ref } from 'vue'
+import { post } from '../scripts/util'
 import { testSH, testECDH } from '../scripts/crypt'
 
 const status = ref('ready')
-const test = async () => {
+
+const testCrypt = async () => {
   try {
     status.value = 'starting'
     testSH()
@@ -19,6 +23,12 @@ const test = async () => {
   } catch (e: any) {
     status.value = e.toString()
   }
+}
+
+const callOp = async () => {
+  status.value = 'remote call test ... '
+  const res = await post({ opName: 'test' })
+  status.value += res.status
 }
 
 </script>
